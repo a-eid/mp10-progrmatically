@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		21B6DE662067FD1500DCB972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6DE652067FD1500DCB972 /* AppDelegate.swift */; };
-		21B6DE682067FD1500DCB972 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6DE672067FD1500DCB972 /* ViewController.swift */; };
+		21B6DE682067FD1500DCB972 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6DE672067FD1500DCB972 /* Home.swift */; };
 		21B6DE6B2067FD1500DCB972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B6DE692067FD1500DCB972 /* Main.storyboard */; };
 		21B6DE6D2067FD1500DCB972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B6DE6C2067FD1500DCB972 /* Assets.xcassets */; };
 		21B6DE702067FD1500DCB972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B6DE6E2067FD1500DCB972 /* LaunchScreen.storyboard */; };
+		21B6DE782067FF3400DCB972 /* anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6DE772067FF3400DCB972 /* anchors.swift */; };
+		21B6DE7A2068336200DCB972 /* AutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B6DE792068336200DCB972 /* AutoScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		21B6DE622067FD1500DCB972 /* scrollViewSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scrollViewSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B6DE652067FD1500DCB972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21B6DE672067FD1500DCB972 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21B6DE672067FD1500DCB972 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		21B6DE6A2067FD1500DCB972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21B6DE6C2067FD1500DCB972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21B6DE6F2067FD1500DCB972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21B6DE712067FD1500DCB972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21B6DE772067FF3400DCB972 /* anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = anchors.swift; sourceTree = "<group>"; };
+		21B6DE792068336200DCB972 /* AutoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				21B6DE652067FD1500DCB972 /* AppDelegate.swift */,
-				21B6DE672067FD1500DCB972 /* ViewController.swift */,
+				21B6DE672067FD1500DCB972 /* Home.swift */,
+				21B6DE772067FF3400DCB972 /* anchors.swift */,
+				21B6DE792068336200DCB972 /* AutoScrollView.swift */,
 				21B6DE692067FD1500DCB972 /* Main.storyboard */,
 				21B6DE6C2067FD1500DCB972 /* Assets.xcassets */,
 				21B6DE6E2067FD1500DCB972 /* LaunchScreen.storyboard */,
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B6DE682067FD1500DCB972 /* ViewController.swift in Sources */,
+				21B6DE782067FF3400DCB972 /* anchors.swift in Sources */,
+				21B6DE682067FD1500DCB972 /* Home.swift in Sources */,
+				21B6DE7A2068336200DCB972 /* AutoScrollView.swift in Sources */,
 				21B6DE662067FD1500DCB972 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +289,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "a-eid.com.github.scrollViewSchool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -296,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "a-eid.com.github.scrollViewSchool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
