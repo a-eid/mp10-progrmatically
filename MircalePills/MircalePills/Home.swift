@@ -16,6 +16,13 @@ class Home: UIViewController {
     return sv
   }()
   
+  var cvb: NSLayoutConstraint?
+  
+  let cv: UIView = {
+    let v = UIView()
+    return v
+  }()
+
   let container: UIView = {
     let v = UIView()
     return v
@@ -113,8 +120,24 @@ class Home: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     setupViews()
+    
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(keyboardWillDisappear(_:)),
+      name: Notification.Name.UIKeyboardWillHide, object: nil
+    )
+    
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(keyboardWillAppear(_:)),
+      name: Notification.Name.UIKeyboardWillShow,
+      object: nil
+    )
+
   }
 
+
+  var svBottom: NSLayoutConstraint?
 }
 
 // setupViews
@@ -131,8 +154,13 @@ extension Home {
   }
   
   func svSetup(){
-    view.addSubview(sv)
-    sv.anchorEdges(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, bottom: view.bottomAnchor)
+    view.addSubview(cv)
+    cv.anchorEdges(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor, bottom: nil )
+    cvb = cv.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    cvb?.isActive = true
+    
+    cv.addSubview(sv)
+    sv.anchorEdges(top: cv.topAnchor, left: cv.leftAnchor, right: cv.rightAnchor, bottom: cv.bottomAnchor )
   }
   
   func containerSetup(){
@@ -198,7 +226,7 @@ extension Home {
     ai.startAnimating()
     container.isUserInteractionEnabled = false
     DispatchQueue.main.asyncAfter(deadline: .now() +  2) {
-      self.container.isUserInteractionEnabled = true 
+      self.container.isUserInteractionEnabled = true
       self.ai.stopAnimating()
       self.present(Success(), animated: true , completion: nil)
     }
@@ -210,7 +238,25 @@ extension Home {
 
 
 
+extension Home {
+  
+  @objc func keyboardWillDisappear(_ N: Any){
+    
+    let bottomOffset = CGPoint(x: 0, y: 80)
+    sv.setContentOffset(bottomOffset, animated: true)
+    
+  }
+  
+  @objc func keyboardWillAppear(_ N: Any){
 
+    let bottomOffset = CGPoint(x: 0, y: 300)
+    sv.setContentOffset(bottomOffset, animated: true)
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+      self.view.endEditing(true)
+    }
+  }
+}
 
 
 

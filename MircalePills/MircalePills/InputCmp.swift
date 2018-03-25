@@ -4,14 +4,12 @@ class InputCmp: UIView {
   
   var labelText: String? {
     willSet{
-      print("here")
       label.text = newValue
     }
   }
 
   var placeHolder: String? {
     willSet{
-      print("here")
       input.placeholder = newValue
     }
   }
