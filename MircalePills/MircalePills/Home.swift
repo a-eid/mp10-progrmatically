@@ -198,7 +198,7 @@ extension Home {
     ai.startAnimating()
     container.isUserInteractionEnabled = false
     DispatchQueue.main.asyncAfter(deadline: .now() +  2) {
-      self.container.isUserInteractionEnabled = false
+      self.container.isUserInteractionEnabled = true 
       self.ai.stopAnimating()
       self.present(Success(), animated: true , completion: nil)
     }
